@@ -1,0 +1,94 @@
+{
+  "tests": [
+    {
+      "name": "Node version",
+      "setup": "npm install",
+      "run": "node -v && echo \"Node is working.\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Validate HTML",
+      "setup": "npm i -g html-validate",
+      "run": "html-validate ./public/*.html",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 50000
+    },
+    {
+      "name": "Validate CSS",
+      "setup": "npm install -g css-validator",
+      "run": "css-validator ./public/*.css",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 50000
+    },
+    {
+      "name": "Front end being served",
+      "setup": "",
+      "run": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl -s http://localhost:${PORT} && sleep 5s",
+      "input": "",
+      "output": "script src=",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 50000
+    },
+    {
+      "name": "Back end being served",
+      "setup": "",
+      "run": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl -s http://localhost:${PORT}/app/ && sleep 5s",
+      "input": "",
+      "output": "200 OK",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 50000
+    },
+    {
+      "name": "Screenshot interface",
+      "setup": "",
+      "run": "ls docs",
+      "input": "",
+      "output": "01-interface",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25000
+    },
+    {
+      "name": "Screenshot results",
+      "setup": "",
+      "run": "ls docs",
+      "input": "",
+      "output": "02-result",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25000
+    },
+    {
+      "name": "Interface run test",
+      "setup": "#npm i -g puppeteer",
+      "run": "echo \"This is a really experimental test to see if we can make curl click a button in your interface and submit a default action. It's going to fail for right now. If I can't get it working, I'm just going to give you the points for it.\"",
+      "input": "",
+      "output": "Nope",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Information",
+      "setup": "",
+      "run": "echo \"I am still configuring and testing one-liner tests for the autograder to make sure that they actually function and catch as many edge and corner cases as possible. You should know by now how to tell if your code is working or not. And if you do not and you are relying on the autograder to tell you, then I can't really help you because I've been telling you not to do that exact thing since day one. So, good luck, I guess. ¯\\_(ツ)_/¯ - @jdmar3\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
