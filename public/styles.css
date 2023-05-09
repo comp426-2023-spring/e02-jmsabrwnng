@@ -1,8 +1,62 @@
+/* Reset default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set basic styles */
 body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
 }
 
-h1 {
+header, footer {
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
-p {
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-left: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#rpsls-options {
+  display: none;
+}
+
+#result-text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
 }

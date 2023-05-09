@@ -1,12 +1,91 @@
-<html>
-    <head>
-        <title>Rock</title>
-        <!-- Link to your script file(s) and CSS in here somewhere -->
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+  <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+  <header>
+    <h1>Rock-Paper-Scissors Game</h1>
+  </header>
 
-    <!-- Your interface markup goes here -->
-    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+  <main>
+    <section id="game-options">
+      <h2>Select Game Type</h2>
+      <div>
+        <input type="radio" id="rps" name="game-type" value="rps" checked>
+        <label for="rps">Rock-Paper-Scissors</label>
+      </div>
+      <div>
+        <input type="radio" id="rpsls" name="game-type" value="rpsls">
+        <label for="rpsls">Rock-Paper-Scissors-Lizard-Spock</label>
+      </div>
+    </section>
 
-    </body>
+    <section id="play-options">
+      <h2>Select Play Option</h2>
+      <div>
+        <input type="radio" id="random" name="play-option" value="random" checked>
+        <label for="random">Random Draw</label>
+      </div>
+      <div>
+        <input type="radio" id="opponent" name="play-option" value="opponent">
+        <label for="opponent">Play Against an Opponent</label>
+      </div>
+    </section>
+
+    <section id="opponent-choice">
+      <h2>Select Opponent Choice</h2>
+      <div id="rps-options">
+        <div>
+          <input type="radio" id="rock" name="opponent-choice" value="rock">
+          <label for="rock">Rock</label>
+        </div>
+        <div>
+          <input type="radio" id="paper" name="opponent-choice" value="paper">
+          <label for="paper">Paper</label>
+        </div>
+        <div>
+          <input type="radio" id="scissors" name="opponent-choice" value="scissors">
+          <label for="scissors">Scissors</label>
+        </div>
+      </div>
+      <div id="rpsls-options" style="display: none;">
+        <div>
+          <input type="radio" id="rock" name="opponent-choice" value="rock">
+          <label for="rock">Rock</label>
+        </div>
+        <div>
+          <input type="radio" id="paper" name="opponent-choice" value="paper">
+          <label for="paper">Paper</label>
+        </div>
+        <div>
+          <input type="radio" id="scissors" name="opponent-choice" value="scissors">
+          <label for="scissors">Scissors</label>
+        </div>
+        <div>
+          <input type="radio" id="lizard" name="opponent-choice" value="lizard">
+          <label for="lizard">Lizard</label>
+        </div>
+        <div>
+          <input type="radio" id="spock" name="opponent-choice" value="spock">
+          <label for="spock">Spock</label>
+        </div>
+      </div>
+    </section>
+
+    <section id="result">
+      <h2>Result</h2>
+      <button id="play-button">Play</button>
+      <button id="reset-button">Reset</button>
+    </section>
+
+  </main>
+  <footer>
+    <a href="rules.html">Game Rules</a>
+  </footer>
+</body>
 </html>
